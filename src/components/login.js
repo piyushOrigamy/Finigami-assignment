@@ -91,7 +91,7 @@ function Login() {
               submit OTP
             </button>
             {(timer === 0 || timer === 30) && <button onClick={onResendOtp}>Resend OTP</button>}
-            {resendOtp && <h1>{"00:" + timer}</h1>}
+            {resendOtp && <p>resend otp after {"00:" + timer} seconds</p>}
           </div>
         )}
       </div>
