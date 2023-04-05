@@ -6,16 +6,49 @@
   height: 100vh;
 }
 
-.otpContainer{
+.otpContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 50vh;
 }
 
-.resendOtp{
+.resendOtp {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+}
+
+.email-info {
+  margin: 20px 0;
+}
+.link-button {
+  border: 0px;
+  margin-left: 10px;
+  padding: 10px;
+  background-color: grey;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+  background-color: #04aa6d;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+button:disabled,
+button[disabled] {
+  opacity: 0.5;
 }

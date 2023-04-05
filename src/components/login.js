@@ -30,6 +30,8 @@ function Login() {
     sendOtp(email)
       .then((user) => {
         setIsOtpSent(true);
+        setIsRunning(true);
+        setResendOtp(true);
       })
       .catch(() => {
         console.log("error in sending otp");
@@ -78,20 +80,28 @@ function Login() {
           </div>
         ) : (
           <div>
-            <p>OTP sent to: {email}</p>
-            <button
-              onClick={() => {
-                setIsOtpSent(false);
-              }}
-            >
-              change email
-            </button>
+            <div className="email-info">
+              OTP sent to: {email}
+              <button
+                className="link-button"
+                onClick={() => {
+                  setIsOtpSent(false);
+                }}
+              >
+                change email
+              </button>
+            </div>
+
             <input placeholder="OTP" type="text" />
             <button className="submitButton" onClick={onSubmitOtp}>
-              submit OTP
+              Submit OTP
             </button>
-            {(timer === 0 || timer === 30) && <button onClick={onResendOtp}>Resend OTP</button>}
             {resendOtp && <p>resend otp after {"00:" + timer} seconds</p>}
+            {
+              <button disabled={timer !== 0} onClick={onResendOtp}>
+                Resend OTP
+              </button>
+            }
           </div>
         )}
       </div>
